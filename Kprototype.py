@@ -10,12 +10,12 @@ from h2oaicore.transformer_utils import CustomUnsupervisedTransformer
 class KPrototypesTransformer(CustomUnsupervisedTransformer):
     @staticmethod
     def get_default_properties():
+        _modules_needed_by_name = ["kmodes"]
+
         return dict(col_type="mixed", min_cols=2, max_cols="all")  # Adjust for mixed types
 
     @staticmethod
     def get_parameter_choices():
-        _modules_needed_by_name = ["kmodes"]
-
         return dict(n_clusters=[2, 3, 4, 5, 6], init=['Huang', 'Cao', 'random'])
 
     def __init__(self, n_clusters=None, init='Huang', **kwargs):
