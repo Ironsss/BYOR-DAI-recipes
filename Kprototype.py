@@ -1,3 +1,6 @@
+! pip install kmodes
+
+
 import datatable as dt
 import numpy as np
 import pandas as pd
