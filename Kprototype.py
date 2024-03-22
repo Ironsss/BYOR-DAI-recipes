@@ -1,12 +1,12 @@
-! pip install kmodes
-
-
 import datatable as dt
 import numpy as np
 import pandas as pd
 from kmodes.kprototypes import KPrototypes
 from h2oaicore.models import CustomUnsupervisedModel
 from h2oaicore.transformer_utils import CustomUnsupervisedTransformer
+
+
+_modules_needed_by_name = ["kmodes==0.12.2"]
 
 
 class KPrototypesTransformer(CustomUnsupervisedTransformer):
