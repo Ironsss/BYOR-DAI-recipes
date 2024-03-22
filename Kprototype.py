@@ -1,4 +1,3 @@
-_modules_needed_by_name = ["kmodes==0.12.2"]
 
 
 import datatable as dt
@@ -23,6 +22,8 @@ class KPrototypesTransformer(CustomUnsupervisedTransformer):
         self.init = init
 
     def fit_transform(self, X: dt.Frame, y: np.array = None):
+        _modules_needed_by_name = ["kmodes==0.12.2"]
+
         # KPrototypes needs to know which columns are categorical. Assuming last column is categorical here as an example.
         categorical_indices = [X.shape[1] - 1]  # Example: Assuming last column is categorical
         
